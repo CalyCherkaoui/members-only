@@ -12,7 +12,10 @@
   <body>
 
     <% if user_signed_in? %>
-      <%= link_to 'Sign-out', destroy_user_session_url, method: :delete %>
+      <h3>Hi <%= current_user.name %>! welcome to MembersOnly app! <small><%= link_to 'Sign-out', destroy_user_session_url, method: :delete %></small></h3>
+    <% else %>
+      <%= link_to 'Sign-up', new_user_registration_path %><br>
+      <%= link_to 'Log-in', new_user_session_path %>
     <% end %>    
 
     <% if flash[:notice] %>
