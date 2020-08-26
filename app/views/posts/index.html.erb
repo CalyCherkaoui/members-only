@@ -12,7 +12,6 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
         <% if user_signed_in?%>
           <td><%= post.user.name %></td>
         <% end %>
