@@ -1,7 +1,7 @@
 ## Built With
 
 - Ruby on Rails
-- Ruby
+- Ruby.
 
 # Getting Started
 
