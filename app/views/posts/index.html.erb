@@ -15,7 +15,7 @@
         <% if user_signed_in?%>
           <td><%= post.user.name %></td>
         <% end %>
-        <% if user_signed_in? && post.user_id == current_user.id %>
+        <% if my_post?(post) %>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
