@@ -12,12 +12,7 @@ module ApplicationHelper
   end
 
   def flash_helper
-     if flash[:notice]
-      "<p class=\"notice\"> #{notice} </p>".html_safe
-     end
-
-     if flash[:alert]
-      "<p class=\"alert\"> #{alert} </p>".html_safe
-     end
+    "<p class=\"notice\"> #{notice} </p>".html_safe if flash[:notice]
+    "<p class=\"alert\"> #{alert} </p>".html_safe if flash[:alert]
   end
 end
