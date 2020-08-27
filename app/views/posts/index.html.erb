@@ -1,0 +1,28 @@
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.body %></td>
+        <% if user_signed_in?%>
+          <td><%= post.user.name %></td>
+        <% end %>
+        <% if my_post?(post) %>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
